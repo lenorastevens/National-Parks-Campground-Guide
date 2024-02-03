@@ -23,11 +23,14 @@
 # Data Source
 - https://developer.nps.gov/api/v1/campgrounds?stateCode={}&api_key={}
 # Initial Module List
-- 
-- 
-- 
+- config.js (api key)
+- parksFetch
+- parkSort
+- Campground Class
+- Parks Class
+
 # Colors/Typography/Styling
-- [Siteplan with details](https://lenorastevens.github.io/National-Parks-Campground-Guide)
+- [Siteplan with details](https://github.com/lenorastevens/National-Parks-Campground-Guide/blob/main/npSiteplan.html)
 
 # Trello Board
 - https://trello.com/b/unjWho4h/national-parks-campground-guide
