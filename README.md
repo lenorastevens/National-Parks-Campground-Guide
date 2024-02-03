@@ -21,7 +21,8 @@
 ![Desktop View](/images/desktop.png)
 
 # Data Source
-- https://developer.nps.gov/api/v1/campgrounds?stateCode={}&api_key={}
+- `https://developer.nps.gov/api/v1/campgrounds?stateCode=${stateCode}&api_key=${API_KEY}`
+- [Free Logo Maker](https://logo.com/) 
 # Initial Module List
 - config.js (api key)
 - parksFetch
@@ -31,6 +32,7 @@
 
 # Colors/Typography/Styling
 - [Siteplan with details](https://github.com/lenorastevens/National-Parks-Campground-Guide/blob/main/npSiteplan.html)
+- [Coolers Planner](https://coolors.co/e2f1e6-182524-f2e2de-381d2a-846267)
 
 # Trello Board
-- https://trello.com/b/unjWho4h/national-parks-campground-guide
+- [My Trello](https://trello.com/b/unjWho4h/national-parks-campground-guide)
