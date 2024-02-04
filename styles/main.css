@@ -25,10 +25,15 @@
     --nav-hover-background-color: #846267;
 }
 
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0 auto;
     text-align: center;
     font-size: 20px;
+    font-family: var(--paragraph-font);
+    background-color: var(--headline-color-on-color);
 }
 
 h1,
@@ -103,4 +108,8 @@ nav a:hover {
     padding: 6px;
     border: none;
     
+  }
+ 
+  .topnav .search-container button {
+    cursor: pointer;
   }
