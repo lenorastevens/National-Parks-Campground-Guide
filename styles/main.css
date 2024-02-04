@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Fira+Sans+Condensed&display=swap');
+
+:root {
+    --primary-color: #E2F1E6;
+    --secondary-color: #182524;
+    --accent1-color: #F2E2DE;
+    --accent2-color: #846267;
+    --accent3-color: #381D2A;
+
+    --heading-font: 'Allura', cursive;
+    --paragraph-font: 'Fira Sans Condensed', sans-serif;
+
+    --headline-color-on-white: #182524;
+    /* headlines on a white background */
+    --headline-color-on-color: #E2F1E6;
+    /* headlines on a colored background */
+    --paragraph-color-on-white: #182524;
+    /* paragraph text on a white background */
+    --paragraph-color-on-color: #E2F1E6;
+    /* paragraph text on a colored background */
+    --paragraph-background-color: #381D2A;
+    --nav-link-color: #F2E2DE;
+    --nav-background-color: #182524;
+    --nav-hover-link-color: #E2F1E6;
+    --nav-hover-background-color: #846267;
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--headline-color-on-white);
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    height: 3px;
+    margin: 35px 0;
+    background: var(--accent1-color);
+}
+
+header {
+    padding: 1em;
+    text-align: center;
+    color: var(--paragraph-color-on-color);
+    background-color: var(--paragraph-background-color);
+}
+
+header>h1,
+header>h2 {
+    color: var(--headline-color-on-color);
+}
+
+#logo {
+    max-width: auto;
+    height: 120px;
+}
+
+nav {
+    background-color: var(--nav-background-color);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.topnav a {
+    padding: 1em;
+    min-width: 120px;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+nav a:link,
+nav a:visited {
+    color: var(--nav-link-color);
+}
+
+nav a:hover {
+    color: var(--nav-hover-link-color);
+    background-color: var(--nav-hover-background-color);
+}
+.topnav input[type=text] {
+    padding: 6px;
+    border: none;
+    
+  }
