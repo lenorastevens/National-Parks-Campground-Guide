@@ -1,13 +1,14 @@
 // url to json file of countries
-const countryURL = "https://lenorastevens.github.io/National-Parks-Campground-Guide/data/states.json"
+const statesURL = "https://lenorastevens.github.io/National-Parks-Campground-Guide/data/states.json"
 
 // fetch request for countries file
 async function getState() {
     try {
-        const response = await fetch(countryURL);
+        const response = await fetch(statesURL);
         if (response.ok) {
             const data = await response.json();
-            createCountries(data);
+            console.log(data);
+            createStates(data);
         } else {
             throw Error(await response.text());
         }

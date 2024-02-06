@@ -36,18 +36,8 @@ body {
     background-color: var(--headline-color-on-color);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--heading-font);
-    color: var(--headline-color-on-white);
-}
-
-h2 {
-    text-align: center;
+#state {
+    font-size: 20px;
 }
 
 hr {
@@ -63,12 +53,8 @@ header {
     background-color: var(--paragraph-background-color);
 }
 
-header>h1,
-header>h2 {
-    color: var(--headline-color-on-color);
-}
-
 #logo {
+    margin: 1.5%;
     max-width: auto;
     height: 120px;
 }
@@ -78,13 +64,9 @@ nav {
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;
-}
-
-nav {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-
 }
 
 .topnav a {
@@ -92,7 +74,6 @@ nav {
     min-width: 120px;
     text-decoration: none;
     padding: 10px;
-
 }
 
 nav a:link,
@@ -104,12 +85,17 @@ nav a:hover {
     color: var(--nav-hover-link-color);
     background-color: var(--nav-hover-background-color);
 }
-.topnav input[type=text] {
-    padding: 6px;
-    border: none;
+
+#parks {
+    /* position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 5%;
+}
+.parksimg {
+    width: 100%;
+    height: auto;
     
-  }
- 
-  .topnav .search-container button {
-    cursor: pointer;
-  }
+}
