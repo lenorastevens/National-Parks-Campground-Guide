@@ -20,32 +20,34 @@
         <nav>
             <img id="logo" src="images/logo-no-background.png" alt="NP Campground Guide Logo">
 
-            <div class="topnav">
-                <a class="active" href="#home">*Home*</a>
-                <a href="npSiteplan.html">Siteplan</a>
-                <div class="search-container">
-                    <form method="get" action="">
-                        <label class="choice">Select a State:
-                            <select id="state" name="state" autofocus required>
-                                <option value="" disabled selected>Select</option>
-                            </select>
-                        </label>
-                    </form>
-                </div>
-            </div>
+            <a class="active" href="#home">*Home*</a>
+            <a href="npSiteplan.html">Siteplan</a>
+            <label class="choice">Select a State: 
+                <select id="state" name="state" autofocus required>
+                    <option value="" disabled selected>Select</option>
+                </select>
+            </label>
         </nav>
 
     </header>
 
     <main>
-        <div id="parks">
+        <div class="parks-container">
+            <div class="slide">
+
+            <!-- dynamically fill in the slides -->
             
+            </div>
+            <div class="button">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
         </div>
 
     </main>
 
     <footer>
-
+        <p>Lenora Stevens | WDD330 Final Project</p>
     </footer>
 
 </body>

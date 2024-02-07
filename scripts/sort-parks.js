@@ -1,42 +1,63 @@
 
 export default function sortParksList(parksList) {
-    const parksElement = document.querySelector('#parks');
+    const parksElement = document.querySelector('.slide');
     parksElement.innerHTML = '';
 
     parksList.forEach(function (park) {
-
-        // const template = `
-        // <section id="slider">
-        //     <input type="radio" name="slider" id="s1"></input>
-        //     <label for="s1" id="slide1">
-        //         <img src="${images[0]}" height="100%" width="100%">
-        //     </label>
-        // </section>`;
-                
-    
-        let parkDiv = document.createElement('div');
-        parkDiv.classList.add('camp-slide');
-
-        let h3 = document.createElement('h3');
-        h3.classList.add('campName');
-        h3.innerText = park.name;
-
-        let img = document.createElement('img');
-        img.classList.add('parksimg');
-        if (park.images && park.images.length > 0) {
-            img.src = park.images[0].url;
-        } else {
-            // Handle case where there are no images
-            img.src = 'https://www.nps.gov/common/uploads/structured_data/69162F54-D4AF-8695-A42F97A8F9774C19.jpg'; // Provide a fallback image URL
-        }
-
-        
-        parkDiv.appendChild(h3);
-        parkDiv.appendChild(img);
-        
-        console.log(h3);
-        parksElement.appendChild(parkDiv);    
+        const template = `
+        <div class="item" style="background-image: url(${park.images[0].url});">
+            <div class="content">
+                <div class="name">${park.name}</div>
+                <div class="des">${park.description}</div>
+                <button>See More</button>
+            </div>
+        </div>
+        `;
+        parksElement.innerHTML += template;
     });
+
     
+    // console.log(template);
+    
+
 }
 
+
+// parksList.forEach(function (park) {
+
+    // const template = `
+    //     <div class="item" style="background-image: url(${park.images[0]});">
+    //         <div class="content">
+    //             <div class="name">${park.name}</div>
+    //             <div class="des">${park.description}</div>
+    //             <button class="more">See More</button>
+    //         </div>
+    //     </div>
+    //     `;
+
+    
+//     parksElement.innerHTML += template;
+// });
+
+// let parkDiv = document.createElement('div');
+        // parkDiv.classList.add('camp-slide');
+
+        // let h3 = document.createElement('h3');
+        // h3.classList.add('campName');
+        // h3.innerText = park.name;
+
+        // let img = document.createElement('img');
+        // img.classList.add('parksimg');
+        // if (park.images && park.images.length > 0) {
+        //     img.src = park.images[0].url;
+        // } else {
+        //     // Handle case where there are no images
+        //     img.src = 'https://www.nps.gov/common/uploads/structured_data/69162F54-D4AF-8695-A42F97A8F9774C19.jpg'; // Provide a fallback image URL
+        // }
+
+        
+        // parkDiv.appendChild(h3);
+        // parkDiv.appendChild(img);
+        
+        // console.log(h3);
+        // parksElement.appendChild(parkDiv);    
