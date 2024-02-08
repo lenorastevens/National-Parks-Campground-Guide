@@ -7,8 +7,8 @@ export default function sortParksList(parksList) {
         const template = `
         <div class="item" style="background-image: url(${park.images[0].url});">
             <div class="content">
-                <div class="name">${park.name}</div>
-                <div class="des">${park.description}</div>
+                <h4 class="name">${park.name}</h4>
+                
                 <button>See More</button>
             </div>
         </div>
@@ -28,7 +28,7 @@ export default function sortParksList(parksList) {
     // const template = `
     //     <div class="item" style="background-image: url(${park.images[0]});">
     //         <div class="content">
-    //             <div class="name">${park.name}</div>
+    //             <h4 class="name">${park.name}</h4>
     //             <div class="des">${park.description}</div>
     //             <button class="more">See More</button>
     //         </div>
