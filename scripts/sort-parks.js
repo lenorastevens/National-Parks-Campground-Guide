@@ -9,16 +9,12 @@ export default function sortParksList(parksList) {
             <div class="content">
                 <h4 class="name">${park.name}</h4>
                 
-                <button>See More</button>
+                
             </div>
         </div>
         `;
         parksElement.innerHTML += template;
     });
-
-    
-    // console.log(template);
-    
 
 }
 

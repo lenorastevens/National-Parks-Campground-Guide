@@ -30,7 +30,7 @@ function createStates(data) {
     // creating the option element, value, default value and adding to select list
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
-    defaultOption.text = 'Select';
+    defaultOption.text = 'Select a State';
     stateSelect.add(defaultOption);
 
     // loop through data to add all countries to the select list

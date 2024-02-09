@@ -39,25 +39,26 @@ body {
 
 #state {
     font-size: 20px;
+    border: 5px ridge var(--accent3-color);
 }
 
 hr {
-    height: 3px;
-    margin: 35px 0;
+    height: 1%;
+    margin: 1% 0;
     background: var(--accent1-color);
 }
 
 header {
-    padding: 1em;
+    padding: .5%;
     text-align: center;
     color: var(--paragraph-color-on-color);
     background-color: var(--paragraph-background-color);
 }
 
 #logo {
-    margin: 1.5%;
+    margin: .5%;
     max-width: auto;
-    height: 120px;
+    height: 130px;
 }
 
 nav {
@@ -67,22 +68,23 @@ nav {
     font-size: 1.2em;
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: .5em;
+
 }
 
-nav a {
-    padding: 1em;
-    min-width: 120px;
+nav a, #plan {
     text-decoration: none;
-    padding: 10px;
 }
-
+#plan:link,
+#plan:visited,
 nav a:link,
 nav a:visited {
     color: var(--nav-link-color);
 }
 
+#plan:hover,
 nav a:hover {
     color: var(--nav-hover-link-color);
     background-color: var(--nav-hover-background-color);
@@ -119,6 +121,9 @@ main {
     z-index: 0;
     border-radius: 15px;
     background-size:cover;
+    border: 5px ridge #381D2A;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+
 }
 .item:nth-child(1)  {
     left: 15%;
@@ -128,7 +133,7 @@ main {
 .item:nth-child(2),
 .item:nth-child(4) {
     height: 250px;
-    opacity: .9;
+    opacity: .8;
     width: 380px;
     z-index: 1;
 }
@@ -186,20 +191,36 @@ main {
     border: none;
     cursor: pointer;
     margin: 0 15px 10px;
-    border: 1px solid var(--headline-color-on-white);
+    border: 3px ridge var(--headline-color-on-white);
     background-color: var(--headline-color-on-white);
     color: var(--headline-color-on-color);
     transition: 0.3s;
-
 }
 
 footer {
     background-color: var(--paragraph-background-color);
-    padding: 1%;
+    padding: .5%;
 }
 
 footer p {
     background-color: var(--nav-background-color);
     padding: 1%;
-    color: var(--headline-color-on-color);
+    margin: 0;
+    color: var(--accent1-color);
+}
+
+@media screen and (max-width: 900px) { 
+    .slide {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+
+
 }
