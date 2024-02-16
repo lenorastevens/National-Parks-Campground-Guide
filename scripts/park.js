@@ -8,22 +8,29 @@ export default class Park {
     displayParkDetails(){
         const parkCard = document.querySelector('.park-info');
         parkCard.innerHTML = '';
+
+        const slideshowItems = this.generateSlidesShowItems();
+
+        const dots = this.generateDots();
+
+        const backupUrl = "https://www.nps.gov";
         const parkTemplate = `
             <div class="slideshow-container">
-                <a class="prevSlide" href="#">&#10094;</a>
-                ${this.generateSlidesShowItems()}
-                <a class="nextSlide" href="#">&#10095;</a>
+                ${slideshowItems} 
             </div>
             <br>
             <div style="text-align:center">
-                ${this.generateDots()}
+                ${dots}
             </div>
-            <div><h2>${this.data.name}</h2></div>
-            <a class="links" href="${this.data.url}" target="blank">Directions</a>
-            <a class="links" href="${this.data.reservationUrl}" target="blank">Reservations</a>
-            <a class="links" href="${this.data.regulationsurl}" target="blank">Plan Your Visit</a>
-            <p>${this.data.fees[0].title}: $${this.data.fees[0].cost}</p>
-            <p>${this.data.description}</p>
+            <div class="details">
+                <h2>${this.data.name || ''}</h2>
+                <a class="links" href="${this.data.url || backupUrl}" target="blank">Directions</a>
+                <a class="links" href="${this.data.reservationUrl || backupUrl}" target="blank">Reservations</a>
+                <a class="links" href="${this.data.regulationsurl || backupUrl}" target="blank">Plan Your Visit</a>
+                <p>${(this.data.fees && this.data.fees.length > 0)  ? `${this.data.fees[0].title}: $${this.data.fees[0].cost}` : ''}</p>
+                <h3>Campground Description</h3>
+                <p>${this.data.description || ''}</p>
+            </div>
 
         `;
 
@@ -109,12 +116,12 @@ export default class Park {
     }
 
     runCampSlides() {
-        const prevSlideBtn = document.querySelector('.prevSlide');
-        const nextSlideBtn = document.querySelector('.nextSlide');
+        // const prevSlideBtn = document.querySelector('.prevSlide');
+        // const nextSlideBtn = document.querySelector('.nextSlide');
         const dots = document.querySelectorAll('.dot');
 
-        prevSlideBtn.addEventListener('click', () => this.plusSlides(-1));
-        nextSlideBtn.addEventListener('click', () => this.plusSlides(1));
+        // prevSlideBtn.addEventListener('click', () => this.plusSlides(-1));
+        // nextSlideBtn.addEventListener('click', () => this.plusSlides(1));
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => this.currentSlide(index + 1));
         });

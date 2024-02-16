@@ -4,9 +4,10 @@ export default function sortParksList(parksList) {
     const parksElement = document.querySelector('.slide');
     parksElement.innerHTML = '';
 
+    const fallbackImage = "images/backupImg.webp";
     
     parksList.forEach(function (park, index) {
-        const imageUrl = park.images[0] ? park.images[0].url : '';
+        const imageUrl = park.images[0] ? park.images[0].url : fallbackImage;
        
         //Define the classes variable within the loop
         let classes = ['card'];

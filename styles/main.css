@@ -25,6 +25,7 @@
     --nav-hover-background-color: #846267;
 }
 
+/* Body Styles */
 * {
     box-sizing: border-box;
 }
@@ -33,10 +34,12 @@ body {
     text-align: center;
     font-size: 20px;
     font-family: var(--paragraph-font);
-    background-color: var(--headline-color-on-color);
-    
+    background-color: var(--headline-color-on-color);  
 }
 
+
+
+/* Header Styles */
 #state {
     font-size: 20px;
     border: 5px ridge var(--accent3-color);
@@ -90,6 +93,7 @@ nav a:hover {
     background-color: var(--nav-hover-background-color);
 }
 
+/* Main Section */
 main {
     margin: 0;
     padding: 2%;
@@ -97,16 +101,17 @@ main {
     background: linear-gradient(180deg, rgb(225, 198, 212) 0%, rgb(63, 91, 93) 100% );
 }
 
+/* Parks Slideshow Styles */
 .parks-container {
     position: relative;
     width: 70%;
     margin: auto;
     height: 65vh;
-    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .slide {
     justify-content: start;
     align-items: center;
@@ -124,7 +129,6 @@ main {
     cursor: pointer;
     overflow: hidden;
     border-radius: 2rem;
-    /* border: 5px ridge var(--accent3-color); */
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
@@ -198,6 +202,7 @@ input:checked + label .name {
     transform: translateY(0) !important;
 }
 
+/* Campground Card Styles */
 .parkCard {
     display: block;
     align-items: center;
@@ -209,7 +214,6 @@ input:checked + label .name {
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    /* border: 5px ridge var(--accent3-color); */
     border-radius: 2rem;
     overflow: hidden;
     background-color: var(--headline-color-on-color);
@@ -231,7 +235,7 @@ input:checked + label .name {
     color: var(--nav-link-color)
 }
 
-.nextSlide, .prevSlide {
+/* .nextSlide, .prevSlide {
     position: absolute;
     top: 50%;
     user-select: none;
@@ -244,7 +248,7 @@ input:checked + label .name {
 }
 .prevSlide {
     left: 0;
-}
+} */
 
 .slideshow-container {
     max-width: 900px;
@@ -265,12 +269,15 @@ input:checked + label .name {
     padding: 1%;
     margin-top: -10px;
 }
+.details {
+    padding: 1%;
+}
 
 .numbertext {
     color: var(--headline-color-on-white);
     background-color: rgb(242, 226, 222, .7);
     border-radius: 50%;
-    padding: .5%;
+    padding: 1%;
     position: absolute;
     top: 5%;
     left: 5%;
@@ -316,7 +323,6 @@ table {
     width: 90%;
     margin: 2% auto;
     overflow-x: auto;
-
 }
 
 th, td {
@@ -324,6 +330,7 @@ th, td {
     padding: .75%;
 }
 
+/* Footer Styles */
 footer {
     background-color: var(--paragraph-background-color);
     padding: .5%;
@@ -336,6 +343,7 @@ footer p {
     color: var(--accent1-color);
 }
 
+/* Media Size adjustments */
 @media screen and (max-width: 900px) { 
     .slide {
         max-width: 900px;
