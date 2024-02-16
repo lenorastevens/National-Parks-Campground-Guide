@@ -76,14 +76,12 @@ export default function sortParksList(parksList) {
         let radios = document.querySelectorAll('[name="slide"]');
 
         next.addEventListener('click', function(){
-            console.log("Next button clicked");
             slideIndex = (slideIndex + 1) % parkSlides.length;
             console.log("After slideIndex update:", slideIndex);
             showParks();
         });
 
         prev.addEventListener('click', function(){
-            console.log("Previous buttton clicked");
             slideIndex = (slideIndex - 1 + parkSlides.length) % parkSlides.length;
             showParks();
         });

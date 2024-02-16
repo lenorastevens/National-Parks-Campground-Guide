@@ -92,16 +92,17 @@ nav a:hover {
 
 main {
     margin: 0;
-    padding: 0;
+    padding: 2%;
     width: 100%;
     background: linear-gradient(180deg, rgb(225, 198, 212) 0%, rgb(63, 91, 93) 100% );
 }
 
 .parks-container {
     position: relative;
-    width: 100%;
+    width: 70%;
+    margin: auto;
     height: 65vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +124,7 @@ main {
     cursor: pointer;
     overflow: hidden;
     border-radius: 2rem;
-    border: 5px ridge var(--accent3-color);
+    /* border: 5px ridge var(--accent3-color); */
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
@@ -206,23 +207,121 @@ input:checked + label .name {
 
 .park-info {
     width: 100%;
-    border: 5px ridge var(--accent3-color);
+    max-width: 1000px;
+    margin: auto;
+    /* border: 5px ridge var(--accent3-color); */
     border-radius: 2rem;
     overflow: hidden;
+    background-color: var(--headline-color-on-color);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
 }
 
 .park-info img {
     width: 100%;
 }
 
-.next, .prev {
+.next, .prev, .nextSlide, .prevSlide {
     background-color: transparent;
     font-size: larger;
     border-radius: .5rem;
+    cursor: pointer;
 }
-.next:hover, .prev:hover {
+.next:hover, .prev:hover, .nextSlide, .prevSlide  {
     background-color: var(--headline-color-on-white);
     color: var(--nav-link-color)
+}
+
+.nextSlide, .prevSlide {
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    width: auto;
+    padding: .5%;
+    text-decoration: none;
+}
+.nextSlide {
+    right: 0;
+}
+.prevSlide {
+    left: 0;
+}
+
+.slideshow-container {
+    max-width: 900px;
+    position: relative;
+    align-items: center;
+}
+
+.mySlides {
+    display: none;
+}
+
+.text {
+    color: var(--headline-color-on-color);
+    background-color: var(--headline-color-on-white);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+    margin-top: -10px;
+}
+
+.numbertext {
+    color: var(--headline-color-on-white);
+    background-color: rgb(242, 226, 222, .7);
+    border-radius: 50%;
+    padding: .5%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.dot {
+    cursor: pointer;
+    background-color: var(--headline-color-on-white);
+    border-radius: 50%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 25px 2px 0 2px;
+    transition: var(--accent3-color) 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--accent2-color);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.links {
+    margin: 0 5px;
+    color: var(--paragraph-background-color);
+}
+.links:hover {
+    color: var(--accent2-color);
+}
+
+table {
+    border: 5px ridge var(--accent3-color);
+    border-radius: 15px;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 2% auto;
+    overflow-x: auto;
+
+}
+
+th, td {
+    border: 2px ridge #182524;
+    padding: .75%;
 }
 
 footer {
@@ -248,7 +347,5 @@ footer p {
     nav {
         flex-direction: column;
     }
-
-
 
 }
