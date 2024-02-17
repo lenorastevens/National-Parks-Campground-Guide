@@ -38,7 +38,6 @@ body {
 }
 
 
-
 /* Header Styles */
 #state {
     font-size: 20px;
@@ -68,7 +67,6 @@ nav {
     background-color: var(--nav-background-color);
     line-height: 3em;
     text-align: center;
-    /* font-size: 1em; */
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -80,6 +78,7 @@ nav {
 nav a, #plan {
     text-decoration: none;
 }
+
 #plan:link,
 #plan:visited,
 nav a:link,
@@ -104,9 +103,8 @@ main {
 /* Parks Slideshow Styles */
 .parks-container {
     position: relative;
-    width: 70%;
+    width: 80%;
     margin: auto;
-    height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,15 +114,16 @@ main {
     justify-content: start;
     align-items: center;
     display: flex;
-    height: 550px;
-    max-width: 1000px;
+    max-width: 800px;
     position: relative;
 }
+
 .card.hidden {
     display: none;
 }
+
 .card {
-    width: 80px;
+    width: 10%;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
@@ -134,20 +133,21 @@ main {
     align-items: flex-end;
     transition: .6s cubic-bezier(.28,-0.03,0,.99);
     box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-    height: 375px;
+    height: 50vh;
 }
+
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size:medium;
+    font-size: medium;
 }
 
 .card > .row {
     color: var(--headline-color-on-color);
     background-color: var(--accent3-color);
-    display: flex;
-    flex-wrap: nowrap;
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
     
 }
 
@@ -155,19 +155,16 @@ main {
     background: var(--headline-color-on-white);
     color: var(--nav-hover-link-color);
     border-radius: 50%;
-    width: 50px;
-    display: flex;
-    justify-content: center;
+    width: 9%;
+    /* display: flex; */
+    /* justify-content: center; */
     align-items: center;
     padding: 2%;
-    margin-left: 14px;   
+    margin-left: 2.5%;   
     opacity: 1; 
 }
 
 .card.inactive > .row > .name {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     overflow: hidden;
     width: 560px;
     opacity: 0;
@@ -178,10 +175,12 @@ main {
 
 .name  {
     text-transform: uppercase;
+    text-align: left;
+    margin-left: 5%;
 }
 
 .name a {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--nav-hover-link-color);
 }
 
@@ -194,25 +193,36 @@ input {
 }
 
 input:checked + label {
-    width: 600px;
+    width: 60%;
 }
 
 input:checked + label .name {
     opacity: 1 !important;
     transform: translateY(0) !important;
+    justify-content: left;
+}
+.next, .prev {
+    background-color: transparent;
+    font-size: larger;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.next:hover, .prev:hover {
+    background-color: var(--headline-color-on-white);
+    color: var(--nav-link-color)
 }
 
 /* Campground Card Styles */
 .parkCard {
     display: block;
     align-items: center;
-    margin: auto;
-    width: 60%;
+    margin: 3% auto;
+    width: 70%;
 }
 
 .park-info {
     width: 100%;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin: auto;
     border-radius: 2rem;
     overflow: hidden;
@@ -224,34 +234,8 @@ input:checked + label .name {
     width: 100%;
 }
 
-.next, .prev, .nextSlide, .prevSlide {
-    background-color: transparent;
-    font-size: larger;
-    border-radius: .5rem;
-    cursor: pointer;
-}
-.next:hover, .prev:hover, .nextSlide, .prevSlide  {
-    background-color: var(--headline-color-on-white);
-    color: var(--nav-link-color)
-}
-
-/* .nextSlide, .prevSlide {
-    position: absolute;
-    top: 50%;
-    user-select: none;
-    width: auto;
-    padding: .5%;
-    text-decoration: none;
-}
-.nextSlide {
-    right: 0;
-}
-.prevSlide {
-    left: 0;
-} */
-
 .slideshow-container {
-    max-width: 900px;
+    /* max-width: 900px; */
     position: relative;
     align-items: center;
 }
@@ -308,6 +292,11 @@ input:checked + label .name {
     to {opacity: 1}
 }
 
+.campground-info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 3%;
+}
 .links {
     margin: 0 5px;
     color: var(--paragraph-background-color);
@@ -318,16 +307,17 @@ input:checked + label .name {
 
 table {
     border: 5px ridge var(--accent3-color);
-    border-radius: 15px;
     border-collapse: collapse;
-    width: 90%;
-    margin: 2% auto;
-    overflow-x: auto;
+    margin-bottom: 3%;
 }
 
 th, td {
     border: 2px ridge #182524;
-    padding: .75%;
+}
+
+table .site-icon {
+    width: 30px;
+    margin-right: 3%;
 }
 
 /* Footer Styles */
@@ -344,16 +334,74 @@ footer p {
 }
 
 /* Media Size adjustments */
-@media screen and (max-width: 900px) { 
+@media screen and (max-width: 900px) {
+    body {
+        font-size: 16px;
+    }
+
+    #state {
+        font-size: 17px;
+    }
+
+    #logo {
+        height: 100px;
+    }
+    .card {
+        height: 35vh;
+        border-radius: 1.5rem;
+        margin: 0 5px;
+    } 
+
     .slide {
-        max-width: 900px;
+       max-width: 500px; 
+    }
+
+    .row {
+        font-size: small;        
+    }
+
+    .card.inactive > .row > .name {
+        width: 350px;
+        margin: 3%;
+    }
+    table .site-icon {
+        width: 25px;
     }
 }
 
 @media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    .card {
+        height: 25vh;
+        border-radius: 1.1rem;
+        margin: 0 3px;
+    } 
 
     nav {
         flex-direction: column;
     }
+    .row {
+        font-size: xx-small;        
+    }
 
+    .slide {
+        max-width: 300px; 
+     }
+
+     .card.inactive > .row > .name {
+        width: 250px;
+    }
+
+    .card.inactive .row .icon {
+        margin-left: 1.5%;
+    }
+    .park-info {
+        border-radius: 1.1rem;
+    }
+    table .site-icon {
+        width: 20px;
+    }
 }
