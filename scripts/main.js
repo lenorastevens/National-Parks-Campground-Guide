@@ -16,11 +16,16 @@ let parksList = [];
 // fetch function that takes the state code and NPS url and gets a list of arrays with parks information
 let parks = null;
 async function getParks(url) {
+
     const response = await fetch(url);
     if (response.ok) {
         parks = await response.json();
         parksList = parks.data;
     
+        // clear park card each time new state is loaded
+        const parkCard = document.querySelector(".park-info");
+        parkCard.innerHTML = "";
+        
         // check if state park list is empty
         if (parksList.length === 0) {
             const parksElement = document.querySelector('.slide');
