@@ -1,9 +1,12 @@
 export default class Park {
+
+  // constructor for park class
   constructor(park) {
     this.data = park;
     this.SlideIndex = 1;
   }
 
+  // method to create and display park card
   displayParkDetails() {
     const parkCard = document.querySelector(".park-info");
     parkCard.innerHTML = "";
@@ -15,6 +18,7 @@ export default class Park {
     const campTable = this.generateCampTable();
 
     const backupUrl = "https://www.nps.gov";
+
     const parkTemplate = `
             <div class="slideshow-container">
                 ${slideshowItems} 
@@ -47,7 +51,6 @@ export default class Park {
                     ${campTable}
                 </table>
             </section>
-
         `;
 
     parkCard.innerHTML = parkTemplate;
@@ -55,6 +58,7 @@ export default class Park {
     this.runCampSlides();
   }
 
+  // create campground image slides
   generateSlidesShowItems() {
     return this.data.images
       .map(
@@ -67,21 +71,21 @@ export default class Park {
             <div class="text">${image.altText}</div>
         </div>
         `
-      )
-      .join("");
+      ).join("");
   }
+
+  // create campground slide dots
   generateDots() {
     return this.data.images
       .map(
         (image, index) => `
         <span id="${image.title}" class="dot" ></span>
         `
-      )
-      .join("");
+      ).join("");
   }
 
+  // create campsite data table
   generateCampTable() {
-
     const horse = parseInt(this.data.campsites.horse);
     const other = parseInt(this.data.campsites.other);
     const horseAndOtherSum = horse + other;
@@ -89,37 +93,37 @@ export default class Park {
     const tableTemplate = `
         <tr>
             <th>TOTAL SITES:</th>
-            <td>${this.data.campsites.totalSites}</td>
+            <td> ${ this.data.campsites.totalSites } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/plugIcon.webp" alt="Plug Icon">Elect Hookups:</th>
-            <td>${this.data.campsites.electricalHookups}</td>
+            <td> ${ this.data.campsites.electricalHookups } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/rvIcon.png" alt="RV Icon">RV Only:</th>
-            <td>${this.data.campsites.rvOnly}</td>
+            <td> ${ this.data.campsites.rvOnly } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/tentIcon.webp" alt="Tent Icon">Tent Only:</th>
-            <td>${this.data.campsites.tentOnly}</td>
+            <td> ${ this.data.campsites.tentOnly } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/walkIcon.webp" alt="Walker Icon">Walk / Boat To:</th>
-            <td>${this.data.campsites.walkBoatTo}</td>
+            <td> ${ this.data.campsites.walkBoatTo } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/groupIcon.webp" alt="Group Icon">Group:</th>
-            <td>${this.data.campsites.group}</td>
+            <td> ${ this.data.campsites.group } </td>
         </tr>
         <tr>
             <th><img class="site-icon" src="images/horseIcon.webp" alt="Horse Icon">Horse & Other:</th>
-            <td>${horseAndOtherSum.toString()}</td>
+            <td> ${ horseAndOtherSum.toString() } </td>
         </tr>
         `;
-
     return tableTemplate;
   }
 
+  // listener for dots to switch images
   runCampSlides() {
     const dots = document.querySelectorAll(".dot");
 
@@ -130,14 +134,17 @@ export default class Park {
     this.showSlides();
   }
 
+  // advance image
   plusSlides(n) {
     this.showSlides((this.SlideIndex += n));
   }
 
+  // go back an image
   currentSlide(n) {
     this.showSlides((this.SlideIndex = n));
   }
 
+  // slideshow logic
   showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");

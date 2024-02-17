@@ -1,11 +1,14 @@
 import Park from "./park.js";
 
+// sort Park List for the state that was selected
 export default function sortParksList(parksList) {
     const parksElement = document.querySelector('.slide');
     parksElement.innerHTML = '';
 
+    // backup image if none in array
     const fallbackImage = "images/backupImg.webp";
     
+    // iterate through park list and create slides with first image
     parksList.forEach(function (park, index) {
         const imageUrl = park.images[0] ? park.images[0].url : fallbackImage;
        
@@ -21,6 +24,7 @@ export default function sortParksList(parksList) {
 
         const classAttribute = classes.join(' ');
 
+        // slide template
         const template = `
         <input type="radio" name="slide" id=c${index + 1} ${index === 0 ? 'checked' : ''} >
         <label for=c${index + 1} class="${classAttribute}" style="background-image: url(${imageUrl});">
@@ -36,15 +40,15 @@ export default function sortParksList(parksList) {
 
     runParkSlides();
 
+    // campground slideshow logic
     function runParkSlides() {
         let slideIndex = 0;
         const parkSlides = document.querySelectorAll('.card');
         let checkedIndex = 0;
         let lastIndex = parkSlides.length - 1;
 
+        // logic to display the 4 campground lineup
         function showParks() {
-            
-
             parkSlides.forEach(function(park, index) {
                 park.classList.remove('checked', 'inactive', 'hidden');
                 if (index >= slideIndex && index < slideIndex + 4) {
@@ -56,9 +60,9 @@ export default function sortParksList(parksList) {
 
             // Ensure there is always a "checked" park
             if (slideIndex < 0) {
-                slideIndex = lastIndex; // Wrap around to the last park if slideIndex goes below 0
+                slideIndex = lastIndex; 
             } else if (slideIndex > lastIndex) {
-                slideIndex = 0; // Wrap around to the first park if slideIndex goes beyond the last index
+                slideIndex = 0; 
             }
 
             if (slideIndex < checkedIndex && checkedIndex < slideIndex + 4) {
@@ -68,7 +72,6 @@ export default function sortParksList(parksList) {
                 document.querySelector(`#c${slideIndex + 1}`).checked = true;
                 checkedIndex = slideIndex;
             }
-
         }
 
         // Slideshow listeners
@@ -96,12 +99,12 @@ export default function sortParksList(parksList) {
 
         showParks();
 
-        //link to park class to display selected park information
+        //link to park class to display selected campground information
         const parkLinks = document.querySelectorAll('.park-link');
 
         parkLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent default link behavior
+                event.preventDefault(); 
 
                 const parkIndex = parseInt(this.getAttribute('data-park-index'));
                 
@@ -110,6 +113,5 @@ export default function sortParksList(parksList) {
                 parkDetails.displayParkDetails();
             });
         });
-
     }
 }

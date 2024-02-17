@@ -72,7 +72,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: .5em;
-
 }
 
 nav a, #plan {
@@ -132,8 +131,13 @@ main {
     display: flex;
     align-items: flex-end;
     transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    box-shadow: 0px 17px 40px -10px rgba(0,0,0,0.8);
     height: 50vh;
+}
+
+.card:hover {
+    box-shadow: 0px 17px 40px -10px var(--nav-hover-background-color);
+    transform: scale(1.1, 1.1);
 }
 
 .row {
@@ -145,10 +149,7 @@ main {
 
 .card > .row {
     color: var(--headline-color-on-color);
-    background-color: var(--accent3-color);
-    /* display: flex; */
-    /* flex-wrap: nowrap; */
-    
+    background-color: var(--accent3-color);   
 }
 
 .card.inactive .row .icon {
@@ -156,8 +157,6 @@ main {
     color: var(--nav-hover-link-color);
     border-radius: 50%;
     width: 9%;
-    /* display: flex; */
-    /* justify-content: center; */
     align-items: center;
     padding: 2%;
     margin-left: 2.5%;   
@@ -222,7 +221,6 @@ input:checked + label .name {
 
 .park-info {
     width: 100%;
-    /* max-width: 1000px; */
     margin: auto;
     border-radius: 2rem;
     overflow: hidden;
@@ -235,7 +233,6 @@ input:checked + label .name {
 }
 
 .slideshow-container {
-    /* max-width: 900px; */
     position: relative;
     align-items: center;
 }
@@ -311,8 +308,16 @@ table {
     margin-bottom: 3%;
 }
 
+table:hover {
+    transform: scale(1.1, 1.1);
+}
+
 th, td {
     border: 2px ridge #182524;
+}
+
+th {
+    text-align: left;
 }
 
 table .site-icon {

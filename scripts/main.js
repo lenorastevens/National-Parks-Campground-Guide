@@ -20,20 +20,13 @@ async function getParks(url) {
     if (response.ok) {
         parks = await response.json();
         parksList = parks.data;
-        console.log(parksList);
-        sortParksList(parksList);
+    
+        // check if state park list is empty
+        if (parksList.length === 0) {
+            const parksElement = document.querySelector('.slide');
+            parksElement.innerHTML = ' No park data available to display for this state. ';
+        } else {
+            sortParksList(parksList);
+        }
     }
 }
-
-// let next = document.querySelector('.next')
-// let prev = document.querySelector('.prev')
-
-// next.addEventListener('click', function(){
-//     let items = document.querySelectorAll('.item')
-//     document.querySelector('.slide').appendChild(items[0])
-// })
-
-// prev.addEventListener('click', function(){
-//     let items = document.querySelectorAll('.item')
-//     document.querySelector('.slide').prepend(items[items.length - 1]) 
-// })

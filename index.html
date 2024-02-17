@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/states.js" type="module"></script>
     <script src="scripts/main.js" type="module"></script>
-    <!-- <link rel="stylesheet" href="styles/siteplan.css"> -->
 
 </head>
 
@@ -21,7 +20,6 @@
             <img id="logo" src="images/logo-no-background.png" alt="NP Campground Guide Logo">
             
             <h1>NP Campground Guide</h1>
-            <!-- <a class="active" href="#home">*Home*</a> -->
             
             <label class="choice"> 
                 <select id="state" name="state" autofocus required>
@@ -34,24 +32,21 @@
     </header>
 
     <main>
+        <!-- Park Slideshow section -->
         <div class="parks-container">
             <button class="prev"> &#10094; </button>
             <div class="slide">
-
-            <!-- dynamically fill in the slides with sort-parks.js -->
-            
-            </div>
-            
+            <!-- dynamically fill in the slides with sort-parks.js -->            
+            </div>           
             <button class="next"> &#10095; </button>            
         </div>
 
+        <!-- Campground Details Section -->
         <div class="parkCard">
             <div class="park-info">
-                <!-- dynamically filled with Park.js -->
-                
+                <!-- dynamically filled with Park.js -->                
             </div>
         </div>
-
     </main>
 
     <footer>

@@ -118,6 +118,7 @@ img {
   nav a:link, nav a:visited {
     color: var(--nav-link-color);
   }
+  
   nav a:hover {
     color: var(--nav-hover-link-color);
     background-color: var(--nav-hover-background-color);
@@ -134,26 +135,17 @@ img {
       ". left left right right ."
       "page2 page2 . . page3 page3";
   }
+
   .sitemap > div {
-  
     text-align: center;
-  
   }
+
   .sm-home {
     grid-area: home;
     background-color: #ccc;
     line-height: 3em;
   }
-  .sm-page2 {
-    grid-area: page2;
-    background-color: #ccc;
-    line-height: 3em;
-  }
-  .sm-page3 {
-    grid-area: page3;
-    background-color: #ccc;
-    line-height: 3em;
-  }
+
   
   .top {
     grid-area: top;
@@ -172,10 +164,10 @@ img {
     border-right: 1px solid;
   }
   #mobile {
-    max-width: 300px;
+    max-width: 100%;
     height: auto;
   }
   #desktop {
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
   }
