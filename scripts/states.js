@@ -7,6 +7,7 @@ async function getState() {
         const response = await fetch(statesURL);
         if (response.ok) {
             const data = await response.json();
+            localStorage.setItem('statesData', JSON.stringify(data));
             createStates(data);
         } else {
             throw Error(await response.text());

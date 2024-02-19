@@ -1,13 +1,20 @@
 import Park from "./park.js";
 
 // sort Park List for the state that was selected
-export default function sortParksList() {
+export default function sortParksList(stateCode) {
     const parksElement = document.querySelector('.slide');
     parksElement.innerHTML = '';
 
-    // Get parks data from local storage if available
+    // Get parks and states data from local storage if available
     const storedParks = localStorage.getItem("parksData");
     const parksList = storedParks ? JSON.parse(storedParks) : [];
+
+    const storedStates = localStorage.getItem("statesData");
+    const statesData = storedStates ? JSON.parse(storedStates) : {};
+    
+    const stateName = statesData[stateCode];
+    const stateTitle = document.getElementById('stateName');
+    stateTitle.textContent = `Browse NP Campgrounds in ${stateName}`;
 
     // backup image if none in array
     const fallbackImage = "images/backupImg.webp";
@@ -31,7 +38,7 @@ export default function sortParksList() {
         // slide template
         const template = `
         <input type="radio" name="slide" id=c${index + 1} ${index === 0 ? 'checked' : ''} >
-        <label for=c${index + 1} class="${classAttribute}" style="background-image: url(${imageUrl});">
+        <label title="Click a campground name for more information" for=c${index + 1} class="${classAttribute}" style="background-image: url(${imageUrl});">
             <div class="row">
                 <div class="icon">${index + 1}</div>
                 <h4 class="name"><a href="#" class="park-link" data-park-index="${index}">${park.name}</a></h4>                    

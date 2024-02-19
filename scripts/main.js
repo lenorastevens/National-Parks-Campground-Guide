@@ -40,10 +40,18 @@ function updateParkList(){
     
     // check if state park list is empty
     if (parksList.length === 0) {
+        const stateTitle = document.getElementById('stateName');
+        stateTitle.innerHTML = '';
+        
+        const storedStates = localStorage.getItem("statesData");
+        const statesData = storedStates ? JSON.parse(storedStates) : {};
+        const stateName = statesData[stateCode];
+
         const parksElement = document.querySelector('.slide');
-        parksElement.innerHTML = ' No park data available to display for this state. ';
+        parksElement.innerHTML = ` No park data available to display for ${stateName}. `;
+
     } else {
-        sortParksList();
+        sortParksList(stateCode);
     }
 }
 
