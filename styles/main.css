@@ -272,7 +272,7 @@ input:checked + label .name {
     width: 15px;
     height: 15px;
     margin: 25px 2px 0 2px;
-    transition: #381D2A 0.6s ease;
+    transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
