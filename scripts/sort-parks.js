@@ -1,9 +1,13 @@
 import Park from "./park.js";
 
 // sort Park List for the state that was selected
-export default function sortParksList(parksList) {
+export default function sortParksList() {
     const parksElement = document.querySelector('.slide');
     parksElement.innerHTML = '';
+
+    // Get parks data from local storage if available
+    const storedParks = localStorage.getItem("parksData");
+    const parksList = storedParks ? JSON.parse(storedParks) : [];
 
     // backup image if none in array
     const fallbackImage = "images/backupImg.webp";
@@ -81,7 +85,6 @@ export default function sortParksList(parksList) {
 
         next.addEventListener('click', function(){
             slideIndex = (slideIndex + 1) % parkSlides.length;
-            console.log("After slideIndex update:", slideIndex);
             showParks();
         });
 

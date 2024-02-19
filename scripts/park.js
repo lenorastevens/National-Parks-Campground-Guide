@@ -6,19 +6,24 @@ export default class Park {
     this.SlideIndex = 1;
   }
 
-  // method to create and display park card
+  // method to create and display park card puts together template data
   displayParkDetails() {
     const parkCard = document.querySelector(".park-info");
     parkCard.innerHTML = "";
 
+    // assembles park pictures
     const slideshowItems = this.generateSlidesShowItems();
 
+    // makes dots for each picture
     const dots = this.generateDots();
 
+    // get the table template
     const campTable = this.generateCampTable();
 
+    // general NPS url in case there is no url in the data
     const backupUrl = "https://www.nps.gov";
 
+    // campground template assembly
     const parkTemplate = `
             <div class="slideshow-container">
                 ${slideshowItems} 
@@ -90,6 +95,7 @@ export default class Park {
     const other = parseInt(this.data.campsites.other);
     const horseAndOtherSum = horse + other;
 
+    // table template
     const tableTemplate = `
         <tr>
             <th>TOTAL SITES:</th>
