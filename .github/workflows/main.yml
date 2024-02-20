@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Build and Deploy
 
 on:
@@ -16,5 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set API key environment variable
+        run: echo "API_KEY=$API_KEY" >> $GITHUB_ENV
+
       - name: Set API key in JS file
         run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }/g' config.js
+        
+      - name: Build
+        run: npm run build
