@@ -13,24 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.0.2
-        with:
-          node-version: '20'
-          
-      - name: Install dependencies
-        run: npm install
-
-      - name: Set API key environment variable
-        run: echo "API_KEY=$API_KEY" >> $GITHUB_ENV
-
-      - name: Set API key in JS file
-        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }}/' scripts/config.js
         
-      - name: Build
-        run: npm run build
-
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
