@@ -16,22 +16,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4.0.2
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Set API key environment variable
-        run: echo "API_KEY=${{ secrets.API_KEY }}" $GITHUB_ENV
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        run: |
-          echo "window.api_key='${{ secrets.API_KEY }}';" >> dist/config.js
-          
-          npm run deploy
+      - name: Set API key in JS file
+        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }/g' config.js
