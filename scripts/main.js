@@ -1,5 +1,8 @@
-import { API_KEY } from "./config.js";
+// import { API_KEY } from "./config.js";
 import sortParksList from "./sort-parks.js";  
+
+const npAPI = import.meta.env.API_KEY;
+console.log(npAPI)
 
 window.addEventListener('beforeunload', function() {
     localStorage.clear();
@@ -9,7 +12,7 @@ window.addEventListener('beforeunload', function() {
 let stateCode = "";
 document.querySelector("#state").addEventListener("input", function () {
     stateCode = this.value;
-    const url = `https://developer.nps.gov/api/v1/campgrounds?&limit=100stateCode=${stateCode}&api_key=${API_KEY}`
+    const url = `https://developer.nps.gov/api/v1/campgrounds?&limit=100stateCode=${stateCode}&api_key=${npAPI}`
     getParks(url);
 }); 
 
@@ -42,7 +45,7 @@ function updateParkList(){
     if (parksList.length === 0) {
         const stateTitle = document.getElementById('stateName');
         stateTitle.innerHTML = '';
-        
+
         const storedStates = localStorage.getItem("statesData");
         const statesData = storedStates ? JSON.parse(storedStates) : {};
         const stateName = statesData[stateCode];
