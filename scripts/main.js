@@ -1,6 +1,7 @@
 import { API_KEY } from "./config.js";
 import sortParksList from "./sort-parks.js";  
 
+// clear previous loads before starting next search
 window.addEventListener('beforeunload', function() {
     localStorage.clear();
 });
