@@ -26,7 +26,7 @@ jobs:
         run: echo "API_KEY=$API_KEY" >> $GITHUB_ENV
 
       - name: Set API key in JS file
-        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }/g' config.js
+        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }/g' scripts/config.js
         
       - name: Build
         run: npm run build
