@@ -26,13 +26,13 @@ jobs:
         run: echo "API_KEY=$API_KEY" >> $GITHUB_ENV
 
       - name: Set API key in JS file
-        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }}/g' scripts/config.js
+        run: sed -i 's/encrypted_api_key/${{ secrets.API_KEY }}/' scripts/config.js
         
       - name: Build
         run: npm run build
 
-      - name: GitHub Pages v3
-        uses: peaceiris/actions-github-pages@v3.1.12
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: National-Parks-Campground-Guide
