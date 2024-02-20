@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+
+      - name: Set API key environment variable
+        run: echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
         
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
