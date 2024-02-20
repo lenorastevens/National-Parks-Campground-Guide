@@ -2,16 +2,12 @@
 
 name: Build and Deploy
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
  
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Set API key environment variable
+        run: echo "API_KEY=${{ secrets.API_KEY }}" $GITHUB_ENV
 
       - name: Build
         run: npm run build
