@@ -1,6 +1,5 @@
-import { API_KEY } from "./config.js";
+//import { API_KEY } from "./config.js";
 import sortParksList from "./sort-parks.js";  
-
 
 window.addEventListener('beforeunload', function() {
     localStorage.clear();
