@@ -1,4 +1,4 @@
-import { API_KEY } from "./config.js";
+// import { API_KEY } from "./config.js";
 import sortParksList from "./sort-parks.js";  
 
 // clear previous loads before starting next search
