@@ -1,4 +1,4 @@
-// import { API_KEY } from "./config.js";
+import { API_KEY } from "./config.js";
 import sortParksList from "./sort-parks.js";  
 
 // clear previous loads before starting next search
@@ -10,7 +10,7 @@ window.addEventListener('beforeunload', function() {
 let stateCode = "";
 document.querySelector("#state").addEventListener("input", function () {
     stateCode = this.value;
-    const url = `https://developer.nps.gov/api/v1/campgrounds?&limit=100stateCode=${stateCode}&api_key=${process.env.API_KEY}`
+    const url = `https://developer.nps.gov/api/v1/campgrounds?&limit=100stateCode=${stateCode}&api_key=${API_KEY}`
     getParks(url);
 }); 
 
